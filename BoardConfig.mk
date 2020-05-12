@@ -11,9 +11,8 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a53
-TARGET_CPU_SMP := true
+TARGET_CPU_ABI2 := 
+TARGET_CPU_VARIANT := generic
 
 # Secondary Architecture
 TARGET_2ND_ARCH := arm
@@ -21,6 +20,12 @@ TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
+# Samsung used cortex-a15 as 2nd cpu variant
+#TARGET_2ND_CPU_VARIANT := cortex-a15
+
+ENABLE_CPUSETS := true
+
+TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
@@ -31,6 +36,8 @@ BOARD_PREBUILT_RECOVERY_DTBOIMAGE := device/samsung/a51nsxx/prebuilt/recovery_dt
 TARGET_PREBUILT_KERNEL := device/samsung/a51nsxx/prebuilt/Image
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --dtb_offset 0x00000000 --dtb device/samsung/a51nsxx/prebuilt/dtb --tags_offset 0x00000100 --header_version 2 --board SRPSG30B002RU
+
+BOARD_USES_METADATA_PARTITION := true
 
 # Use it after testing
 # Kernel
