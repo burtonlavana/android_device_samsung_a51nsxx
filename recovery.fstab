@@ -1,28 +1,20 @@
-#system          /system         ext4            ro,barrier=1            wait,avb=vbmeta,logical,first_stage_mount
-#vendor          /vendor         ext4            ro,barrier=1            wait,avb,logical,first_stage_mount
-#product         /product        ext4            ro,errors=panic         wait,avb,logical,first_stage_mount
-#odm             /odm            ext4            ro,errors=panic         wait,avb,logical,first_stage_mount
+system		/system	ext4	logical
+vendor		/vendor	ext4	logical
+product	/product	ext4	logical
+odm		/odm		ext4	logical
 
-/system_root    ext4    /dev/block/platform/13520000.ufs/by-name/system 	flags=display="System";backup=0
-/system_image   emmc    /dev/block/platform/13520000.ufs/by-name/system 	flags=backup=1;flashimg
-/vendor		ext4	/dev/block/platform/13520000.ufs/by-name/vendor 	flags=backup=0
-/vendor_image	emmc	/dev/block/platform/13520000.ufs/by-name/vendor		flags=backup=1;flashimg
-/product	ext4	/dev/block/platform/13520000.ufs/by-name/product 	flags=backup=1;display="Product"
-/product_image	emmc	/dev/block/platform/13520000.ufs/by-name/product 	flags=backup=1;flashimg;display="Product Image (CSC)"
-/odm		ext4	/dev/block/platform/13520000.ufs/by-name/odm 		flags=backup=0;display="ODM"
-/odm_image	emmc	/dev/block/platform/13520000.ufs/by-name/odm		flags=backup=1;flashimg
-
-/modem		emmc	/dev/block/platform/13520000.ufs/by-name/radio		flags=backup=1;display="Modem Firmware"
-/boot           emmc    /dev/block/platform/13520000.ufs/by-name/boot
-/cache          ext4	/dev/block/platform/13520000.ufs/by-name/cache  	flags=backup=1;display="Cache"
-/data           f2fs	/dev/block/platform/13520000.ufs/by-name/userdata
+/modem		emmc	/dev/block/platform/13520000.ufs/by-name/radio	flags=backup=1;display="Modem Firmware"
+/cache		ext4	/dev/block/platform/13520000.ufs/by-name/cache	flags=backup=1;display="Cache"
+/data		f2fs	/dev/block/platform/13520000.ufs/by-name/userdata
 /efs		ext4	/dev/block/platform/13520000.ufs/by-name/efs		flags=backup=1;display="EFS"
-/recovery       emmc    /dev/block/platform/13520000.ufs/by-name/recovery	flags=backup=1;flashimg
-
+/prism		ext4	/dev/block/platform/13520000.ufs/by-name/prism	flags=backup=1;display="Prism"
+/optics	ext4	/dev/block/platform/13520000.ufs/by-name/optics	flags=backup=1;display="Optics"
+/metadata	ext4	/dev/block/platform/13520000.ufs/by-name/metadata	flags=backup=0;display="Metadata"
 /misc		emmc	/dev/block/platform/13520000.ufs/by-name/misc		flags=backup=0;display="Misc"
 
-/metadata	ext4	/dev/block/platform/13520000.ufs/by-name/metadata	flags=backup=0;display="Metadata"
+/recovery       emmc    /dev/block/platform/13520000.ufs/by-name/recovery	flags=backup=1;flashimg
+/boot           emmc    /dev/block/platform/13520000.ufs/by-name/boot	flags=backup=1;flashimg
+/super          emmc    /dev/block/platform/13520000.ufs/by-name/super	flags=backup=1;flashimg;display="super.img"
 
-/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0			flags=display="Micro SDcard";storage;wipeingui;removable
-/usb-otg	vfat	/dev/block/sdf1 /dev/block/sdf				flags=display="USB-OTG";storage;wipeingui;removable
-
+/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0		flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sdf1 /dev/block/sdf			flags=display="USB-OTG";storage;wipeingui;removable
