@@ -14,7 +14,6 @@ odm		/odm		ext4	logical
 
 /recovery       emmc    /dev/block/platform/13520000.ufs/by-name/recovery	flags=backup=1;flashimg
 /boot           emmc    /dev/block/platform/13520000.ufs/by-name/boot	flags=backup=1;flashimg
-/super          emmc    /dev/block/platform/13520000.ufs/by-name/super	flags=backup=1;flashimg;display="super.img"
 
 /external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0		flags=display="Micro SDcard";storage;wipeingui;removable
 /usb-otg	vfat	/dev/block/sdf1 /dev/block/sdf			flags=display="USB-OTG";storage;wipeingui;removable
