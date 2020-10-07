@@ -70,11 +70,6 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     product \
     odm
 
-# System as root
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-BOARD_SUPPRESS_SECURE_ERASE := true
-AB_OTA_UPDATER := false
-
 # TWRP specific build flags
 RECOVERY_VARIANT := twrp
 ALLOW_MISSING_DEPENDENCIES=true
@@ -82,7 +77,7 @@ TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/kernel/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
+#TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/kernel/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 TARGET_RECOVERY_FSTAB := device/samsung/a51nsxx/recovery.fstab
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_Y_OFFSET := 90
@@ -94,11 +89,5 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_NTFS_3G := true
 TW_EXCLUDE_SUPERSU := true
 TW_EXTRA_LANGUAGES := true
-TW_USE_NEW_MINADBD := true
-TW_USE_TOOLBOX := true
 TW_EXCLUDE_TWRPAPP := true
 #TW_INCLUDE_CRYPTO := true
-#TW_INCLUDE_FBE := true
-
-# Include
-#TARGET_SPECIFIC_HEADER_PATH := device/samsung/a51nsxx/include

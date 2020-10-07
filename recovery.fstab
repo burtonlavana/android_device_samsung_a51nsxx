@@ -1,19 +1,21 @@
-system		/system	ext4	logical
-vendor		/vendor	ext4	logical
-product	/product	ext4	logical
+system		/system		ext4	logical
+vendor		/vendor		ext4	logical
+product		/product	ext4	logical
 odm		/odm		ext4	logical
 
-/modem		emmc	/dev/block/platform/13520000.ufs/by-name/radio	flags=backup=1;display="Modem Firmware"
-/cache		ext4	/dev/block/platform/13520000.ufs/by-name/cache	flags=backup=1;display="Cache"
+/modem		emmc	/dev/block/platform/13520000.ufs/by-name/radio		flags=backup=1;display="Modem Firmware"
+/cache		ext4	/dev/block/platform/13520000.ufs/by-name/cache
 /data		f2fs	/dev/block/platform/13520000.ufs/by-name/userdata
 /efs		ext4	/dev/block/platform/13520000.ufs/by-name/efs		flags=backup=1;display="EFS"
-/prism		ext4	/dev/block/platform/13520000.ufs/by-name/prism	flags=backup=1;display="Prism"
-/optics	ext4	/dev/block/platform/13520000.ufs/by-name/optics	flags=backup=1;display="Optics"
-/metadata	ext4	/dev/block/platform/13520000.ufs/by-name/metadata	flags=backup=0;display="Metadata"
-/misc		emmc	/dev/block/platform/13520000.ufs/by-name/misc		flags=backup=0;display="Misc"
+/prism		ext4	/dev/block/platform/13520000.ufs/by-name/prism		flags=backup=1;display="Prism"
+/optics		ext4	/dev/block/platform/13520000.ufs/by-name/optics		flags=backup=1;display="Optics"
+/metadata	ext4	/dev/block/platform/13520000.ufs/by-name/metadata	flags=backup=1;display="Metadata"
+/misc		emmc	/dev/block/platform/13520000.ufs/by-name/misc		flags=backup=1;display="Misc"
+/sec_efs	ext4	/dev/block/platform/13520000.ufs/by-name/sec_efs	flags=backup=1;display="Sec EFS"
+
 
 /recovery       emmc    /dev/block/platform/13520000.ufs/by-name/recovery	flags=backup=1;flashimg
-/boot           emmc    /dev/block/platform/13520000.ufs/by-name/boot	flags=backup=1;flashimg
+/boot           emmc    /dev/block/platform/13520000.ufs/by-name/boot		flags=backup=1;flashimg
 
-/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0		flags=display="Micro SDcard";storage;wipeingui;removable
-/usb-otg	vfat	/dev/block/sdf1 /dev/block/sdf			flags=display="USB-OTG";storage;wipeingui;removable
+/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0			flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sdf1 /dev/block/sdf				flags=display="USB-OTG";storage;wipeingui;removable
